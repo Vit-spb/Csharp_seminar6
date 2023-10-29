@@ -3,19 +3,23 @@
 
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-string CheckTriangle(int b1, int k1, int b2, int k2)
-{
-if (a < b + c && b < a + c && c < a + b) return "Треугольник существует со сторонами такой длинны";
-return "Треугольник не существует со сторонами такой длинны";
-
-}
-
+// Console.Write("Введите b1: ");
+// var b1 = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Введите k1: ");
+// var k1 = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Введите b2: ");
+// var b2 = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Введите k2: ");
+// var k2 = Convert.ToDouble(Console.ReadLine());
+//----------------------------------------------
 Console.WriteLine("Введите значения b1, k1, b2 и k2: ");
 int[] myMrray = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
-if (myMrray.Length!=4)
-{
-myMrray = (2,5,4,9)
-return;
-}
-
-Console.WriteLine(CheckTriangle(myMrray[0],myMrray[1],myMrray[2], myMrray[3]));
+ var b1 = Convert.ToDouble(myMrray[0]);
+ var k1 = Convert.ToDouble(myMrray[1]);
+ var b2 = Convert.ToDouble(myMrray[2]);
+ var k2 = Convert.ToDouble(myMrray[3]);
+ 
+var x = Math.Round((-(b1 - b2) / (k1 - k2)), 3);
+var y = Math.Round((k1 * x + b1), 3);
+  
+Console.WriteLine($"Пересечение в точке: ({x};{y})");
